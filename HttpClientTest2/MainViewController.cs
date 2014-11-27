@@ -11,9 +11,6 @@ namespace HttpClientTest2
 {
 	public partial class MainViewController : UIViewController
 	{
-        private Module module;
-        private ViewModel viewModel;
-
 		public MainViewController (IntPtr handle) : base (handle)
 		{
 		}
@@ -21,16 +18,21 @@ namespace HttpClientTest2
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.module = new Module();
         }
 
-        async partial void buttonClick (MonoTouch.Foundation.NSObject sender){
-            Debug.WriteLine("BEFORE CLICK");
+        partial void buttonClick (MonoTouch.Foundation.NSObject sender){
+            GetViewModelAsync();
+            //One request works most of the time, but two at the same time is a recipe for disaster
+            GetViewModelAsync();
+        }
+
+        async private void GetViewModelAsync(){
+            Debug.WriteLine("BEFORE GETVIEWMODELASYNC");
             ViewModel viewModel = await MyClass.Instance.GetViewModelAsync(new Request(){Name="MyName"});
             if(viewModel!=null){
-                Debug.WriteLine("AFTER CLICK: " + viewModel.user);
+                Debug.WriteLine("AFTER GETVIEWMODELASYNC: " + viewModel.user);
             }else{
-                Debug.WriteLine("FAILED");
+                Debug.WriteLine("GETVIEWMODELASYNC FAILED");
             }
         }
 	}

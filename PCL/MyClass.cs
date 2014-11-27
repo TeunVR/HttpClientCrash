@@ -33,12 +33,12 @@ namespace PCL
         {
             try
             {
-                System.Diagnostics.Debug.WriteLine("BEFORE");
+                System.Diagnostics.Debug.WriteLine("BEFORE POSTASYNC");
 
                 StringContent content = new StringContent (JsonConvert.SerializeObject (request), Encoding.UTF8, "application/json");
                 var response = await httpClient.PostAsync ("post",content);
 
-                System.Diagnostics.Debug.WriteLine("AFTER");
+                System.Diagnostics.Debug.WriteLine("AFTER POSTASYNC");
 
                 if (response.IsSuccessStatusCode)
                 {
