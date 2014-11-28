@@ -55,6 +55,6 @@ Global
 		{621E6664-B8C0-4686-8B63-E26179D140A7}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = HttpClientTestAndroid\HttpClientTestAndroid.csproj
+		StartupItem = HttpClientTest2\HttpClientTest2.csproj
 	EndGlobalSection
 EndGlobal
