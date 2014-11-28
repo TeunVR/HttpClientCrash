@@ -6,7 +6,8 @@ Some crashes in Xamarin/Mono HttpClient on iOS and Android
 Multiple simulatenous postAsync-calls seem to cause issues on iOS and Android.
 
 iOS start with 2 POSTs:
-2014-11-28 12:29:17.177 HttpClientTest2[21202:2929810] System.Net.ProtocolViolationException: The number of bytes to be written is greater than the specified ContentLength.
+
+``2014-11-28 12:29:17.177 HttpClientTest2[21202:2929810] System.Net.ProtocolViolationException: The number of bytes to be written is greater than the specified ContentLength.
   at System.Net.WebConnectionStream.CheckWriteOverflow (Int64 contentLength, Int64 totalWritten, Int64 size) [0x0002d] in ///Library/Frameworks/Xamarin.iOS.framework/Versions/8.4.0.43/src/mono/mcs/class/System/System.Net/WebConnectionStream.cs:577 
   at System.Net.WebConnectionStream.BeginWrite (System.Byte[] buffer, Int32 offset, Int32 size, System.AsyncCallback cb, System.Object state) [0x001a3] in ///Library/Frameworks/Xamarin.iOS.framework/Versions/8.4.0.43/src/mono/mcs/class/System/System.Net/WebConnectionStream.cs:528 
   at System.Threading.Tasks.TaskFactory`1[System.Object].FromAsyncBeginEnd[Byte[],Int32,Int32] (System.Func`6 beginMethod, System.Func`2 endMethod, System.Byte[] arg1, Int32 arg2, Int32 arg3, System.Object state, TaskCreationOptions creationOptions) [0x00062] in /Developer/MonoTouch/Source/mono/mcs/class/corlib/System.Threading.Tasks/TaskFactory_T.cs:453 
@@ -26,6 +27,7 @@ iOS start with 2 POSTs:
   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw () [0x0000b] in /Developer/MonoTouch/Source/mono/mcs/class/corlib/System.Runtime.ExceptionServices/ExceptionDispatchInfo.cs:62 
   at System.Runtime.CompilerServices.TaskAwaiter`1[System.Net.Http.HttpResponseMessage].GetResult () [0x00034] in /Developer/MonoTouch/Source/mono/mcs/class/corlib/System.Runtime.CompilerServices/TaskAwaiter_T.cs:59 
   at PCL.MyClass+<PostAsync>c__async1.MoveNext () [0x000c3] in /Users/User/Documents/XamarinProjects/HttpClientTest2/PCL/MyClass.cs:74
+``
 
 iOS 20 POSTs:
 2014-11-28 12:29:52.069 HttpClientTest2[21271:2933248] System.InvalidOperationException: Cannot re-call start of asynchronous method while a previous call is still in progress.
