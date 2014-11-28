@@ -6,6 +6,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using PCL;
 using System.Diagnostics;
+using System.Net;
 
 namespace HttpClientTest2
 {
@@ -18,21 +19,54 @@ namespace HttpClientTest2
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            Debug.WriteLine("Limit:" + ServicePointManager.DefaultConnectionLimit);
+            //ServicePointManager.DefaultConnectionLimit = 2;
         }
 
-        partial void buttonClick (MonoTouch.Foundation.NSObject sender){
-            GetViewModelAsync();
-            //One request works most of the time, but two at the same time is a recipe for disaster
-            GetViewModelAsync();
+        partial void oneGet (MonoTouch.Foundation.NSObject sender){
+            GetAsync();
+        }
+        partial void twoGets (MonoTouch.Foundation.NSObject sender){
+            for(int i=0;i<2;i++){
+                GetAsync();
+            }
+        }
+        partial void twentyGets (MonoTouch.Foundation.NSObject sender){
+            for(int i=0;i<20;i++){
+                GetAsync();
+            }
         }
 
-        async private void GetViewModelAsync(){
-            Debug.WriteLine("BEFORE GETVIEWMODELASYNC");
-            ViewModel viewModel = await MyClass.Instance.GetViewModelAsync(new Request(){Name="MyName"});
+        async private void GetAsync(){
+            Debug.WriteLine("BEFORE GETASYNC");
+            ViewModel viewModel = await MyClass.Instance.GetAsync();
             if(viewModel!=null){
-                Debug.WriteLine("AFTER GETVIEWMODELASYNC: " + viewModel.user);
+                Debug.WriteLine("AFTER GETASYNC: " + viewModel.user);
             }else{
-                Debug.WriteLine("GETVIEWMODELASYNC FAILED");
+                Debug.WriteLine("GETASYNC FAILED");
+            }
+        }
+
+        partial void onePost (MonoTouch.Foundation.NSObject sender){
+            PostAsync();
+        }
+        partial void twoPosts (MonoTouch.Foundation.NSObject sender){
+            for(int i=0;i<2;i++){
+                PostAsync();
+            }
+        }
+        partial void twentyPosts (MonoTouch.Foundation.NSObject sender){
+            for(int i=0;i<20;i++){
+                PostAsync();
+            }
+        }
+        async private void PostAsync(){
+            Debug.WriteLine("BEFORE POSTASYNC");
+            ViewModel viewModel = await MyClass.Instance.PostAsync(new Request(){Name="My name"});
+            if(viewModel!=null){
+                Debug.WriteLine("AFTER POSTASYNC: " + viewModel.user);
+            }else{
+                Debug.WriteLine("POSTASYNC FAILED");
             }
         }
 	}

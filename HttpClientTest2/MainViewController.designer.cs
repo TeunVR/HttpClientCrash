@@ -12,8 +12,23 @@ namespace HttpClientTest2
 	[Register ("MainViewController")]
 	partial class MainViewController
 	{
-		[Action ("buttonClick:")]
-		partial void buttonClick (MonoTouch.Foundation.NSObject sender);
+		[Action ("oneGet:")]
+		partial void oneGet (MonoTouch.Foundation.NSObject sender);
+
+		[Action ("onePost:")]
+		partial void onePost (MonoTouch.Foundation.NSObject sender);
+
+		[Action ("twentyGets:")]
+		partial void twentyGets (MonoTouch.Foundation.NSObject sender);
+
+		[Action ("twentyPosts:")]
+		partial void twentyPosts (MonoTouch.Foundation.NSObject sender);
+
+		[Action ("twoGets:")]
+		partial void twoGets (MonoTouch.Foundation.NSObject sender);
+
+		[Action ("twoPosts:")]
+		partial void twoPosts (MonoTouch.Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{

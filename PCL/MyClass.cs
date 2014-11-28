@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Text;
 using System.Diagnostics;
+using System.Net.Http;
 
 namespace PCL
 {
@@ -14,7 +14,8 @@ namespace PCL
 
         private MyClass() {
             httpClient = new HttpClient();
-            httpClient.BaseAddress=new Uri ("http://localhost:3000/");
+            // TODO: YOUR NODEJS-IP HERE (OR LOCALHOST FOR iOS Simulator)
+            httpClient.BaseAddress=new Uri ("http://10.0.1.12:3000/");
         }
 
         public static MyClass Instance
@@ -29,16 +30,50 @@ namespace PCL
             }
         }
 
-        public async Task<ViewModel> GetViewModelAsync(Request request)
+        public async Task<ViewModel> GetAsync()
         {
             try
             {
-                System.Diagnostics.Debug.WriteLine("BEFORE POSTASYNC");
+                System.Diagnostics.Debug.WriteLine("START GETASYNC");
+
+                // GET works correctly
+                var response = await httpClient.GetAsync("get");
+
+                System.Diagnostics.Debug.WriteLine("END GETASYNC");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var body = await response.Content.ReadAsStringAsync();
+
+                    return JsonConvert.DeserializeObject<ViewModel>(body);
+                }
+
+                return null;
+            }
+            catch (HttpRequestException ex)
+            {
+                Debug.WriteLine(ex);
+                return null;
+            }
+            catch(Exception allEx)
+            {
+                Debug.WriteLine(allEx);
+                return null;
+            }
+        }
+
+        public async Task<ViewModel> PostAsync(Request request)
+        {
+            try
+            {
+                System.Diagnostics.Debug.WriteLine("START POSTASYNC");
 
                 StringContent content = new StringContent (JsonConvert.SerializeObject (request), Encoding.UTF8, "application/json");
+
+                // POST crashes
                 var response = await httpClient.PostAsync ("post",content);
 
-                System.Diagnostics.Debug.WriteLine("AFTER POSTASYNC");
+                System.Diagnostics.Debug.WriteLine("END POSTASYNC");
 
                 if (response.IsSuccessStatusCode)
                 {
