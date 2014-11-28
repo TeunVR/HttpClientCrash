@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <Button
+        android:id="@+id/oneGet"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/oneGet" />
+    <Button
+        android:id="@+id/twoGets"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/twoGets" />
+    <Button
+        android:id="@+id/twentyGets"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/twentyGets" />
+    <Button
+        android:id="@+id/onePost"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/onePost" />
+    <Button
+        android:id="@+id/twoPosts"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/twoPosts" />
+    <Button
+        android:id="@+id/twentyPosts"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/twentyPosts" />
+</LinearLayout>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="oneGet">1 GET</string>
+	<string name="twoGets">2 GETs</string>
+	<string name="twentyGets">20 GETs</string>
+	<string name="onePost">1 POST</string>
+	<string name="twoPosts">2 POSTs</string>
+	<string name="twentyPosts">20 POSTs</string>
+	<string name="app_name">HttpClientTestAndroid</string>
+</resources>

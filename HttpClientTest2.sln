@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientTest2", "HttpClie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCL", "PCL\PCL.csproj", "{621E6664-B8C0-4686-8B63-E26179D140A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientTestAndroid", "HttpClientTestAndroid\HttpClientTestAndroid.csproj", "{14772B60-E240-4CB8-8EDF-34CF6DD4EFE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -15,6 +17,18 @@ Global
 		AppStore|iPhone = AppStore|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14772B60-E240-4CB8-8EDF-34CF6DD4EFE7}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{14772B60-E240-4CB8-8EDF-34CF6DD4EFE7}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{14772B60-E240-4CB8-8EDF-34CF6DD4EFE7}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{14772B60-E240-4CB8-8EDF-34CF6DD4EFE7}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{14772B60-E240-4CB8-8EDF-34CF6DD4EFE7}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{14772B60-E240-4CB8-8EDF-34CF6DD4EFE7}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{14772B60-E240-4CB8-8EDF-34CF6DD4EFE7}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{14772B60-E240-4CB8-8EDF-34CF6DD4EFE7}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{14772B60-E240-4CB8-8EDF-34CF6DD4EFE7}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{14772B60-E240-4CB8-8EDF-34CF6DD4EFE7}.Release|iPhone.Build.0 = Release|Any CPU
+		{14772B60-E240-4CB8-8EDF-34CF6DD4EFE7}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{14772B60-E240-4CB8-8EDF-34CF6DD4EFE7}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{48903C10-5293-466D-BB3A-6C7CC2C6C959}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
 		{48903C10-5293-466D-BB3A-6C7CC2C6C959}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
 		{48903C10-5293-466D-BB3A-6C7CC2C6C959}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
@@ -41,6 +55,6 @@ Global
 		{621E6664-B8C0-4686-8B63-E26179D140A7}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = HttpClientTest2\HttpClientTest2.csproj
+		StartupItem = HttpClientTestAndroid\HttpClientTestAndroid.csproj
 	EndGlobalSection
 EndGlobal
