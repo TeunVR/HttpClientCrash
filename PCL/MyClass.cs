@@ -15,7 +15,7 @@ namespace PCL
         private MyClass() {
             httpClient = new HttpClient();
             // TODO: YOUR NODEJS-IP HERE (OR LOCALHOST FOR iOS Simulator)
-            httpClient.BaseAddress=new Uri ("http://localhost:3000/");
+            httpClient.BaseAddress=new Uri ("http://127.0.0.1:3000/");
         }
 
         public static MyClass Instance
