@@ -8,7 +8,7 @@ Multiple simulatenous postAsync-calls seem to cause issues on iOS and Android.
 Besides that it looks like Android is not executing the requests in parallel (should do 2 in parallel according to ServicePointManager.DefaultConnectionLimit. But it looks like it is only doing one request at a time.
 
 To run the project start the nodejs server from the TestServer subdirectory first:
-- npm init
+- npm install
 - npm start
 
 Also when testing on device set the IP-address of your nodejs-server in MyClass.cs
